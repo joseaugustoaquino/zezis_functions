@@ -1,16 +1,25 @@
-# zezis_functions
+# Zezis Functions - Versão 0.0.1
 
-A new Flutter project.
+[![Rep](https://img.shields.io/badge/Rep-GitHub-green)](https://github.com/joseaugustoaquino/zezis_functions) [![Donate](https://img.shields.io/badge/Donate-PayPal-green)](https://www.paypal.com/donate/?hosted_button_id=X33T6Y8W8B3AY)
 
-## Getting Started
+# Information
+Functions/Widget/Alerts/Dialogs in a customized way and with easy dependency management.
 
-This project is a starting point for a Flutter application.
+# Resources
 
-A few resources to get you started if this is your first Flutter project:
+Framework [Futter](https://flutter.dev/):
+```sh
+Versão 3.0.0
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Linguagem [Dart](https://dart.dev/):
+```sh
+Versão 3.0.0
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Packages [Pub.dev](https://pub.dev/):
+```sh
+Null-Safety | Dart 3.0 | Flutter 3.0
+```
+
+### [Mit License](https://github.com/joseaugustoaquino/zezis_functions/blob/main/LICENSE)
