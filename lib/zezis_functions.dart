@@ -1,7 +1,5 @@
 library zezis_functions;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'package:zezis_functions/extension/z_extensions.dart';
+export 'package:zezis_functions/format/z_input_formatter.dart';
+export 'package:zezis_functions/validation/z_validation.dart';
