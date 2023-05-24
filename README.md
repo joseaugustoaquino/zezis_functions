@@ -1,4 +1,4 @@
-# Zezis Widget - Versão 0.0.2
+# Zezis Widget - Versão 0.0.1
 
 [![Rep](https://img.shields.io/badge/Rep-GitHub-green)](https://github.com/joseaugustoaquino/zezis_functions) [![Donate](https://img.shields.io/badge/Donate-PayPal-green)](https://www.paypal.com/donate/?hosted_button_id=X33T6Y8W8B3AY)
 
