@@ -6,6 +6,6 @@
 
 * Correction of empty and null values
 
-## 0.0.03 
+## 0.0.3 
 
 * Object type for null identification
