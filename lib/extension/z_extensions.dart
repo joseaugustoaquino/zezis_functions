@@ -16,6 +16,8 @@ extension CurrencyDouble on double {
 extension ConvertString on String {
   double toCurrencyNumeric() {
     try {
+      if (isNullOrEmpty()) { return 0.0; }
+
       var numeric = double.parse(replaceAll("R\$", "").replaceAll(".", "").replaceAll(",", ""));
       return numeric;
     } catch (_) {
@@ -25,6 +27,8 @@ extension ConvertString on String {
 
   double toDecimal() {
     try {
+      if (isNullOrEmpty()) { return 0.0; }
+
       var numeric = double.parse(this);
       return numeric;
     } catch (_) {
@@ -34,6 +38,8 @@ extension ConvertString on String {
 
   int toInt() {
     try {
+      if (isNullOrEmpty()) { return 0; }
+
       var numeric = int.parse(this);
       return numeric;
     } catch (_) {
