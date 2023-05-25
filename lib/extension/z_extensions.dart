@@ -171,8 +171,8 @@ extension ConvertDateTime on DateTime {
 extension ValidationDynamic<T> on T {
   bool isNullOrEmpty() {
     if (this == null) { return true; }
-    if (this == null) { return (this as List).isEmpty; }
-    if (this == String) { return (this as String).trim().isEmpty; }
+    if (runtimeType == List) { return (this as List).isEmpty; }
+    if (runtimeType == String) { return (this as String).trim().isEmpty; }
 
     return false;
   }
