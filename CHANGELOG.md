@@ -9,3 +9,7 @@
 ## 0.0.3 
 
 * Object type for null identification
+
+## 0.0.4
+
+* Correction in value conversion

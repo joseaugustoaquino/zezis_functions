@@ -18,7 +18,7 @@ extension ConvertString on String {
     try {
       if (isNullOrEmpty()) { return 0.0; }
 
-      var numeric = double.parse(replaceAll("R\$", "").replaceAll(".", "").replaceAll(",", ""));
+      var numeric = double.parse(replaceAll("R\$", "").replaceAll(".", "").replaceAll(",", "."));
       return numeric;
     } catch (_) {
       throw ArgumentError("the entered value is invalid: $this");
