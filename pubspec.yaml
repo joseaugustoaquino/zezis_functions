@@ -1,7 +1,7 @@
 name: zezis_functions
 description: Functions in a customized way and with easy dependency management.
 
-version: 0.0.4
+version: 0.0.5
 repository: https://github.com/joseaugustoaquino/zezis_functions
 homepage: https://github.com/joseaugustoaquino
 
@@ -18,7 +18,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
 
 flutter:
   uses-material-design: true
