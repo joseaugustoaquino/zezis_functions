@@ -52,7 +52,12 @@ extension ConvertString on String {
       if (isNullOrEmpty()) { return false; }
 
       if (toUpperCase() == 'TRUE') { return true; }
+      if (toUpperCase() == 'T')    { return true; }
+      if (this == '1')             { return true; }
+
       if (toUpperCase() == 'FALSE') { return false; }
+      if (toUpperCase() == 'F')     { return false; }
+      if (this == '0')              { return false; }
 
       return false;
     } catch (_) {
