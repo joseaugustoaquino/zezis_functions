@@ -376,3 +376,38 @@ class ZInputFormatterCurrency extends TextInputFormatter {
 
 }
 
+
+class ZDecimalTextInputFormatter extends TextInputFormatter {
+  ZDecimalTextInputFormatter({
+    required this.decimalRange
+  }) : assert(decimalRange > 0);
+
+  final int decimalRange;
+
+  @override
+  TextEditingValue formatEditUpdate(TextEditingValue oldValue, TextEditingValue newValue) {
+    TextSelection newSelection = newValue.selection;
+    
+    String truncated = newValue.text.replaceAll(",", ".");
+    String value = newValue.text.replaceAll(",", ".");
+
+    if (value.contains(".") &&
+        value.substring(value.indexOf(".") + 1).length > decimalRange) {
+      truncated = oldValue.text;
+      newSelection = oldValue.selection;
+    } else if (value == ".") {
+      truncated = "0.";
+
+      newSelection = newValue.selection.copyWith(
+        baseOffset: min(truncated.length, truncated.length + 1),
+        extentOffset: min(truncated.length, truncated.length + 1),
+      );
+    }
+
+    return TextEditingValue(
+      text: truncated,
+      selection: newSelection,
+      composing: TextRange.empty,
+    );
+  }
+}
