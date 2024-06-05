@@ -94,6 +94,22 @@ extension ConvertString on String {
     
     return maskedNumber;
   }
+
+  String toCapitalized() {
+    try {
+      return length > 0 ?'${this[0].toUpperCase()}${substring(1).toLowerCase()}':'';
+    } catch (_) {
+      throw ArgumentError("the entered value is invalid: $this");
+    }
+  }
+
+  String toUpperFirstCase() {
+    try {
+      return replaceAll(RegExp(' +'), ' ').split(' ').map((str) => str.toCapitalized()).join(' ');
+    } catch (_) {
+      throw ArgumentError("the entered value is invalid: $this");
+    }
+  }
 }
 
 extension ConvertDateTime on DateTime {
