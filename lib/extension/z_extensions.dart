@@ -209,4 +209,15 @@ extension ListConvert<T> on List<T> {
     
     return sum;
   }
+  
+  List<T> removeDuplicates({required bool Function(T, T) areEqual}) {
+    var result = <T>[];
+    for (var item in this) {
+      if (!result.any((x) => areEqual(x, item))) {
+        result.add(item);
+      }
+    }
+
+    return result;
+  }
 }
