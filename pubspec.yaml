@@ -1,13 +1,12 @@
 name: zezis_functions
 description: Functions in a customized way and with easy dependency management.
 
-version: 0.0.16
+version: 0.0.17
 repository: https://github.com/joseaugustoaquino/zezis_functions
 homepage: https://github.com/joseaugustoaquino
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
-  flutter: ">=1.17.0"
 
 dependencies:
   flutter:

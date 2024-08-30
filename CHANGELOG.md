@@ -10,6 +10,6 @@
 
 * Object type for null identification
 
-## 0.0.16
+## 0.0.17
 
 * Correction in value conversion
