@@ -1,7 +1,7 @@
 name: zezis_functions
 description: Functions in a customized way and with easy dependency management.
 
-version: 0.0.17
+version: 0.0.20+2
 repository: https://github.com/joseaugustoaquino/zezis_functions
 homepage: https://github.com/joseaugustoaquino
 

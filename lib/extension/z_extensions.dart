@@ -13,35 +13,35 @@ extension CurrencyDouble on double {
   ).format(this);
 }
 
-extension ConvertString on String {
-  double toCurrencyNumeric() {
+extension ConvertString on String? {
+  double? toCurrencyNumeric() {
     try {
-      if (isNullOrEmpty()) { return 0.0; }
+      if (this == null) { return null; } 
+      if (isNullOrEmpty()) { return null; }
 
-      var numeric = double.parse(replaceAll("R\$", "").replaceAll(".", "").replaceAll(",", "."));
-      return numeric;
+      return double.parse(this!.replaceAll("R\$", "").replaceAll(".", "").replaceAll(",", "."));
     } catch (_) {
       throw ArgumentError("the entered value is invalid: $this");
     }
   }
 
-  double toDecimal() {
+  double? toDecimal() {
     try {
-      if (isNullOrEmpty()) { return 0.0; }
+      if (this == null) { return null; }
+      if (isNullOrEmpty()) { return null; }
 
-      var numeric = double.parse(this);
-      return numeric;
+      return double.parse(this!);
     } catch (_) {
       throw ArgumentError("the entered value is invalid: $this");
     }
   }
 
-  int toInt() {
+  int? toInt() {
     try {
-      if (isNullOrEmpty()) { return 0; }
+      if (this == null) { return null; }
+      if (isNullOrEmpty()) { return null; }
 
-      var numeric = int.parse(this);
-      return numeric;
+      return int.parse(this!);
     } catch (_) {
       throw ArgumentError("the entered value is invalid: $this");
     }
@@ -49,14 +49,15 @@ extension ConvertString on String {
 
   bool toBool() {
     try {
+      if (this == null) { return false; }
       if (isNullOrEmpty()) { return false; }
 
-      if (toUpperCase() == 'TRUE') { return true; }
-      if (toUpperCase() == 'T')    { return true; }
+      if (this!.toUpperCase() == 'TRUE') { return true; }
+      if (this!.toUpperCase() == 'T')    { return true; }
       if (this == '1')             { return true; }
 
-      if (toUpperCase() == 'FALSE') { return false; }
-      if (toUpperCase() == 'F')     { return false; }
+      if (this!.toUpperCase() == 'FALSE') { return false; }
+      if (this!.toUpperCase() == 'F')     { return false; }
       if (this == '0')              { return false; }
 
       return false;
@@ -68,7 +69,9 @@ extension ConvertString on String {
   String formatMask({required String mask}) {
     var value = this;
 
+    if (value == null) { return ""; }
     if (value.isNullOrEmpty()) { return ""; }
+
     mask = mask.replaceAll("0", "#");
 
     // Remove qualquer caractere que não seja numérico
@@ -97,7 +100,8 @@ extension ConvertString on String {
 
   String toCapitalized() {
     try {
-      return length > 0 ?'${this[0].toUpperCase()}${substring(1).toLowerCase()}':'';
+      if (this == null) { return ""; }
+      return this!.isNotEmpty ?'${this![0].toUpperCase()}${this!.substring(1).toLowerCase()}':'';
     } catch (_) {
       throw ArgumentError("the entered value is invalid: $this");
     }
@@ -105,7 +109,8 @@ extension ConvertString on String {
 
   String toUpperFirstCase() {
     try {
-      return replaceAll(RegExp(' +'), ' ').split(' ').map((str) => str.toCapitalized()).join(' ');
+      if (this == null) { return ""; }
+      return this!.replaceAll(RegExp(' +'), ' ').split(' ').map((str) => str.toCapitalized()).join(' ');
     } catch (_) {
       throw ArgumentError("the entered value is invalid: $this");
     }
@@ -192,6 +197,7 @@ extension ConvertDateTime on DateTime {
 extension ValidationDynamic<T> on T {
   bool isNullOrEmpty() {
     if (this == null) { return true; }
+    if (this == "null") { return true; }
     if (runtimeType == List) { return (this as List).isEmpty; }
     if (runtimeType == String) { return (this as String).trim().isEmpty; }
 
